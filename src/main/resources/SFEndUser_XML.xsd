@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns="urn:schemas-citrite-net:pip:sfdc:enduser:1" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="urn:schemas-citrite-net:pip:sfdc:enduser:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EndUserInfo" nillable="true">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Org_ID" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Name" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Geo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Area" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Territory" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Region" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_SubArea" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_SalesArea" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_District" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_State" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Country_Name" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Country_Code" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="End_User_Email_Address" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="High_Touch_Flag" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
