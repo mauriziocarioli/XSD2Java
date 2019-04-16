@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<!--?xml version="1.0" encoding="utf-16"?-->
 <!--xs:schema xmlns="urn:schemas-citrite-net:pip:sfdc:enduser:1" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="urn:schemas-citrite-net:pip:sfdc:enduser:1" xmlns:xs="http://www.w3.org/2001/XMLSchema"-->
 <xs:schema targetNamespace="http://enduser.sfdc.pip.schemas-citrite-net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
  <xs:element name="EndUserInfo" nillable="true">
