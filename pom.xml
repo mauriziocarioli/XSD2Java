@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>net.citrite</groupId>
-    <artifactId>XSD2Java</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>XSD to Java with JAXB2</name>
-    <!--    FIXME change it to the project's website -->
-    <url>http://www.redhat.com</url>
-    <properties>
-        <project.build.sourceEncoding>UTF-16</project.build.sourceEncoding>
-	    <project.reporting.outputEncoding>UTF-16</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-    <build>
-        <pluginManagement>
-            <!--            lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>jaxb2-maven-plugin</artifactId>
-		    <version>2.4.0</version>
-                    <executions>
-                        <execution>
-                            <id>xjc</id>
-                            <goals>
-                                <goal>xjc</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <!--schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory-->
-			<xjbSources>
-			    <xjbSource>src/main/resources/global.xjb</xjbSource>
-			</xjbSources>
-			<sources>
-			    <!--source>src/main/resources/SFEndUser_XML.xsd</source-->
-			    <source>src/main/resources/test.xsd</source>
-		        </sources>
-                        <target>2.2</target>
-                        <packageName>net.citrite</packageName>
-                        <clearOutputDir>false</clearOutputDir>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>citrite</groupId>
+	<artifactId>XSD2Java</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>XSD to Java with JAXB2</name>
+	<url>http://www.redhat.com</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-16</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-16</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>bre-xml</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jaxb2-maven-plugin</artifactId>
+					<version>2.4.0</version>
+					<executions>
+						<execution>
+							<id>xjc</id>
+							<goals>
+								<goal>xjc</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<schemaDirectory>src/main/resources/</schemaDirectory>
+						<!--xjbSources -->
+						<!--xjbSource>src/main/resources/global.xjb</xjbSource -->
+						<!--/xjbSources -->
+						<!--sources -->
+						<!--source>src/main/resources/SFEndUser_XML.xsd</source -->
+						<!--source>src/main/resources/test.xsd</source -->
+						<!--/sources -->
+						<target>2.2</target>
+						<packageName>citrite</packageName>
+						<clearOutputDir>false</clearOutputDir>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
